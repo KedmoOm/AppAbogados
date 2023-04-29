@@ -1,28 +1,40 @@
 package controlador;
+//import modelo.Abogado;
+//import modelo.Asunto;
+//import modelo.Cliente;
+//import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import modelo.Abogado;
-import modelo.Asunto;
-import modelo.Cliente;
-import java.util.Scanner;
 
+public class Main extends Application {
 
-public class Main {
+   // Scanner leer = new Scanner(System.in);
+    //private int op;
 
-    Scanner leer = new Scanner(System.in);
-    private int op;
-
-    Cliente cliente1;
-    Abogado abogado;
-    Asunto asunto1;
+  //  Cliente cliente1;
+  //  Abogado abogado;
+   // Asunto asunto1;
     
-    private Abogado[] abogados =new Abogado[3];
+   // private Abogado[] abogados =new Abogado[3];
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/vista/AbogadosVentana1.fxml"));
 
-
-    public static void main(String[] args) {
-        Main main = new Main();
-        main.menu();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    /*
     public void menu() {
         abogados[0] =new Abogado("234", "Pérez","carrera 59");
         abogado = abogados[0];
@@ -65,5 +77,5 @@ public class Main {
                     System.out.println("Opción no válida");
             }
         } while (op != -1);
-    }
+    }*/
 }
