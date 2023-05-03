@@ -3,6 +3,7 @@ package controlador;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,15 +12,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import modelo.Abogado;
 
 public class UsuarioNuevoController implements Initializable {
 
-    private TextField txFieldUsuario;
-    private TextField txFieldNombre;
-    private TextField txFieldDireccion;
-    private TextField txFieldContraseña;
+    @FXML
+    private TextField tfUsuario, tfNombre, tfDireccion, tfContraseña;
+
+    @FXML
     private Button btGuardar;
+
+    private static String usuario;
+    private static String nombre;
+    private static String direccion;
+    private static String contraseña;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -27,10 +32,12 @@ public class UsuarioNuevoController implements Initializable {
     }
 
     @FXML
-    private void onGuardar() throws IOException {
-        Abogado abogado1 = new Abogado("123", txFieldNombre.getText(), txFieldDireccion.getText());
-        abogado1.setUsuario(txFieldUsuario.getText());
-        abogado1.setContraseña(txFieldContraseña.getText());
+    public void onGuardar(ActionEvent event) throws IOException {
+
+        usuario = tfUsuario.getText();
+        nombre = tfNombre.getText();
+        direccion = tfDireccion.getText();
+        contraseña = tfContraseña.getText();
 
         System.out.println("datos guardados correctamente");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
@@ -44,5 +51,21 @@ public class UsuarioNuevoController implements Initializable {
         stage.show();
         Stage myStage = (Stage) this.btGuardar.getScene().getWindow();
         myStage.close();
+    }
+
+    public static String getNombre() {
+        return nombre;
+    }
+
+    public static String getDireccion() {
+        return direccion;
+    }
+
+    public static String getContraseña() {
+        return contraseña;
+    }
+
+    public static String getUsuario() {
+        return usuario;
     }
 }

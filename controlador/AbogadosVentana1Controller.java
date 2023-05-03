@@ -23,7 +23,7 @@ public class AbogadosVentana1Controller implements Initializable {
     }
 
     @FXML
-    private void onContinuar() throws IOException {
+    private void onContinuar(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
 
         Parent root = loader.load();

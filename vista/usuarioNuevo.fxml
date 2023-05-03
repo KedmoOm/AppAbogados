@@ -9,14 +9,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="384.0" prefWidth="347.0" style="-fx-background-color: #1b1b1b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.UsuarioNuevoController">
    <children>
-      <Pane fx:id="txFieldContraseña" layoutX="13.0" layoutY="26.0" prefHeight="338.0" prefWidth="322.0" style="-fx-background-color: #c9ab12; -fx-background-radius: 15;">
+      <Pane layoutX="13.0" layoutY="26.0" prefHeight="338.0" prefWidth="322.0" style="-fx-background-color: #c9ab12; -fx-background-radius: 15;">
          <children>
             <Label layoutX="51.0" layoutY="117.0" text="Nombre" textFill="#1b1b1b">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField fx:id="txFieldUsuario" layoutX="134.0" layoutY="87.0" prefHeight="23.0" prefWidth="176.0" />
+            <TextField fx:id="tfUsuario" layoutX="134.0" layoutY="87.0" prefHeight="23.0" prefWidth="176.0" />
             <Label layoutX="51.0" layoutY="86.0" prefHeight="25.0" prefWidth="74.0" text="Usuario" textFill="#1b1b1b">
                <font>
                   <Font size="21.0" />
@@ -32,9 +32,9 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextField fx:id="txFieldDireccion" layoutX="134.0" layoutY="155.0" prefHeight="23.0" prefWidth="176.0" />
-            <TextField fx:id="txFieldContraseña" layoutX="134.0" layoutY="187.0" prefHeight="23.0" prefWidth="176.0" />
-            <TextField fx:id="txFieldNombre" layoutX="134.0" layoutY="118.0" prefHeight="23.0" prefWidth="176.0" />
+            <TextField fx:id="tfDireccion" layoutX="134.0" layoutY="155.0" prefHeight="23.0" prefWidth="176.0" />
+            <TextField fx:id="tfContraseña" layoutX="134.0" layoutY="187.0" prefHeight="23.0" prefWidth="176.0" />
+            <TextField fx:id="tfNombre" layoutX="134.0" layoutY="118.0" prefHeight="23.0" prefWidth="176.0" />
             <Label layoutX="38.0" layoutY="154.0" text="Direccion" textFill="#1b1b1b">
                <font>
                   <Font size="21.0" />
