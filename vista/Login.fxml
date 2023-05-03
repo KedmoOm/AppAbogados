@@ -5,28 +5,41 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="451.0" prefWidth="343.0" style="-fx-background-color: #393838;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="451.0" prefWidth="343.0" style="-fx-background-color: #1b1b1b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.LoginController">
    <children>
-      <Label layoutX="101.0" layoutY="24.0" text="Inicio de sesion" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <PasswordField layoutX="91.0" layoutY="250.0" />
-      <TextField layoutX="91.0" layoutY="181.0" />
-      <Label layoutX="119.0" layoutY="218.0" text="Contraseña" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="136.0" layoutY="142.0" text="Usuario" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Button layoutX="125.0" layoutY="371.0" mnemonicParsing="false" text="Crear usuario" />
-      <Button layoutX="81.0" layoutY="312.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="185.0" text="Continuar" />
+      <Pane layoutX="44.0" layoutY="12.0" prefHeight="418.0" prefWidth="260.0" style="-fx-background-color: #c9ab12; -fx-background-radius: 15;">
+         <children>
+            <Button fx:id="btNuevoUsuario" layoutX="65.0" layoutY="351.0" mnemonicParsing="false" onAction="#onNuevoUsuario" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #1b1b1b; -fx-background-radius: 20;" text="Crear usuario" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="txFieldContraseña" layoutX="39.0" layoutY="198.0" prefHeight="23.0" prefWidth="185.0" />
+            <Label layoutX="69.0" layoutY="169.0" text="Contraseña" textFill="#1b1b1b">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txFieldUsuario" layoutX="43.0" layoutY="122.0" prefHeight="23.0" prefWidth="176.0" />
+            <Label layoutX="91.0" layoutY="89.0" prefHeight="25.0" prefWidth="74.0" text="Usuario" textFill="#1b1b1b">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="btContinuar" layoutX="30.0" layoutY="297.0" mnemonicParsing="false" onAction="#onContinuar" prefHeight="36.0" prefWidth="196.0" style="-fx-background-color: #1b1b1b; -fx-background-radius: 20;" text="Continuar" textFill="#cfae00">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="51.0" layoutY="14.0" text="Inicio de sesion" textFill="#252525">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -3,24 +3,21 @@ package controlador;
 //import modelo.Asunto;
 //import modelo.Cliente;
 //import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class Main extends Application {
 
-   // Scanner leer = new Scanner(System.in);
+    // Scanner leer = new Scanner(System.in);
     //private int op;
-
-  //  Cliente cliente1;
-  //  Abogado abogado;
-   // Asunto asunto1;
-    
-   // private Abogado[] abogados =new Abogado[3];
-    
+    //  Cliente cliente1;
+    //  Abogado abogado;
+    // Asunto asunto1;
+    // private Abogado[] abogados =new Abogado[3];
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/vista/AbogadosVentana1.fxml"));
