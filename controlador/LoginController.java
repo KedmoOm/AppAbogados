@@ -23,11 +23,10 @@ public class LoginController implements Initializable {
     @FXML
     private TextField tfUsuario, tfContraseña;
 
-    private String usuario;
-    private String contraseña;
+    private String contraseña = "";
+    private String usuario ="";
 
-    private String a;
-    private String b;
+    private String a, b;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -40,27 +39,30 @@ public class LoginController implements Initializable {
         b = tfContraseña.getText();
 
         if (a.equals("admin") && b.equals("admin")) {
-            
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
+            AbogadosVentana2Controller.setIngreso(usuario);
 
-                Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
 
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
+            Parent root = loader.load();
 
-                stage.setScene(scene);
-                stage.show();
-                Stage myStage = (Stage) this.btContinuar.getScene().getWindow();
-                myStage.close();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+            Stage myStage = (Stage) this.btContinuar.getScene().getWindow();
+            myStage.close();
         }
 
         usuario = UsuarioNuevoController.getUsuario();
-        System.out.println("valo de usuario: " + usuario);
-        
+        //System.out.println("valo de usuario: " + usuario);
+
         contraseña = UsuarioNuevoController.getContraseña();
-        System.out.println("valo de usuario: " + contraseña);
+        //System.out.println("valo de contraseña: " + contraseña);
 
         if (usuario.equals(a) && contraseña.equals(b)) {
+            AbogadosVentana2Controller.setIngreso(usuario);
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
 
             Parent root = loader.load();

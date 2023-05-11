@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -20,11 +21,13 @@ public class UsuarioNuevoController implements Initializable {
 
     @FXML
     private Button btGuardar;
+    
+    @FXML
+    private CheckBox cbAbogado, cbCliente;
 
-    private static String usuario;
-    private static String nombre;
-    private static String direccion;
-    private static String contraseña;
+    private static String nombre,direccion;
+    private static String contraseña = "";
+    private static String usuario = "";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -53,6 +56,22 @@ public class UsuarioNuevoController implements Initializable {
         myStage.close();
     }
 
+    @FXML
+    public void onCliente(ActionEvent event){
+        if(cbAbogado.isSelected()){
+            System.out.println("el otro boton ya esta seleccionado");
+            cbAbogado.setSelected(false);
+        }
+    }
+    
+    @FXML
+    public void onAbogado(ActionEvent event){
+        if(cbCliente.isSelected()){
+            System.out.println("el otro boton ya esta seleccionado");
+            cbCliente.setSelected(false);
+        }
+    }
+    
     public static String getNombre() {
         return nombre;
     }
