@@ -1,19 +1,22 @@
 package controlador;
 
+import static controlador.UsuarioNuevoController.abogados;
+import static controlador.UsuarioNuevoController.clientes;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import modelo.Abogado;
+import modelo.Cliente;
 
 public class LoginController implements Initializable {
 
@@ -24,58 +27,73 @@ public class LoginController implements Initializable {
     private TextField tfUsuario, tfContraseña;
 
     private String contraseña = "";
-    private String usuario ="";
+    private String usuario = "";
 
-    private String a, b;
-
+    //private String a, b;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        abogados.add(new Abogado("2", "Kevin fernando Sepulveda", "Calle 135 diagonal sur 46-34", "123", "kevinf"));
+        abogados.add(new Abogado("3", "Carlos González Ruiz", "Calle 135 sur 63-53", "123", "carlosG"));
+        abogados.add(new Abogado("4", "Juan García López", "Calle Primavera #10", "6346", "juanG"));
+        abogados.add(new Abogado("5", "María Rodríguez Torres", "Avenida del Sol #5", "contraseña", "mariaR"));
+        abogados.add(new Abogado("6", "Alejandro Martínez Herrera", "Paseo de los Pinos #3", "12345", "alejandroM"));
+        clientes.add(new Cliente("7", "Hector Samuel", "Callejón de la Luna #8", "321", "hectorS"));
+        clientes.add(new Cliente("8", "Laura Hernández García", "Boulevard de la Playa #2", "l4ura1993", "lauraH"));
+        clientes.add(new Cliente("9", "Luis Ramírez Rodríguez", "Carrera de la Montaña #6", "1994", "luisR"));
+        clientes.add(new Cliente("10", "Sofía Morales López", "Camino del Río #4", "scoth", "sofiaM"));
+        clientes.add(new Cliente("11", "Pedro Castro Martínez", "Pasaje de la Estrella #1", "1442/35/34", "pedroC"));
     }
 
     @FXML
     public void onContinuar(ActionEvent event) throws IOException {
+        System.out.println("boton oprimido");
 
-        a = tfUsuario.getText();
-        b = tfContraseña.getText();
+        usuario = tfUsuario.getText();
+        contraseña = tfContraseña.getText();
 
-        if (a.equals("admin") && b.equals("admin")) {
-            AbogadosVentana2Controller.setIngreso(usuario);
+        boolean fin = false;
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
+        for (Abogado u : abogados) {
+            if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contraseña)) {
 
-            Parent root = loader.load();
+                AbogadosVentana2Controller.setIngreso(usuario);
+                fin = true;
 
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
 
-            stage.setScene(scene);
-            stage.show();
-            Stage myStage = (Stage) this.btContinuar.getScene().getWindow();
-            myStage.close();
+                Parent root = loader.load();
+
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+
+                stage.setScene(scene);
+                stage.show();
+                Stage myStage = (Stage) this.btContinuar.getScene().getWindow();
+                myStage.close();
+            }
         }
+        for (Cliente p : clientes) {
+            if (p.getUsuario().equals(usuario) && p.getContraseña().equals(contraseña)) {
 
-        usuario = UsuarioNuevoController.getUsuario();
-        //System.out.println("valo de usuario: " + usuario);
+                fin = true;
+                AbogadosVentana2Controller.setIngreso(usuario);
 
-        contraseña = UsuarioNuevoController.getContraseña();
-        //System.out.println("valo de contraseña: " + contraseña);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
 
-        if (usuario.equals(a) && contraseña.equals(b)) {
-            AbogadosVentana2Controller.setIngreso(usuario);
+                Parent root = loader.load();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/AbogadosVentana2.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
 
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-
-            stage.setScene(scene);
-            stage.show();
-            Stage myStage = (Stage) this.btContinuar.getScene().getWindow();
-            myStage.close();
-        } else {
-            System.out.println("Error de contraseña o usuario");
+                stage.setScene(scene);
+                stage.show();
+                Stage myStage = (Stage) this.btContinuar.getScene().getWindow();
+                myStage.close();
+            }
+        }
+        if (fin == false) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Error de contraseña o usuario");
+            alert.show();
         }
     }
 

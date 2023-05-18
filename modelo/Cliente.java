@@ -3,21 +3,26 @@ package modelo;
 import modelo.Persona;
 
 public class Cliente extends Persona {
-
-    private Asunto asunto1; 
     
-    public Cliente(String id, String nombre, String direccion,String expedineteId, String e, String i, String f) {
+    private String contraseña;
+    private String usuario;
+    
+    public Cliente(String id, String nombre, String direccion,String contraseña,String usuario) {
         super(id, nombre, direccion);
-        Asunto asunto = new Asunto("5464", e, i, f);
-        asunto1 = asunto;
+        this.contraseña = contraseña;
+        this.usuario = usuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public String getUsuario() {
+        return usuario;
     }
 
     @Override
     public String toString() {
         return "Cliente 1 (id: " + super.getId() + " nombre: " + super.getNombre() + " direccion: " + super.getDireccion() + ")";
-    }
-
-    public Asunto getAsunto1() {
-        return asunto1;
     }
 }
