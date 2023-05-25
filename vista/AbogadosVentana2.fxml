@@ -29,8 +29,7 @@
                <children>
                   <VBox fx:id="vbAsuntos" layoutX="4.0" layoutY="7.0" prefHeight="367.0" prefWidth="247.0" spacing="10.0">
                      <children>
-                        <RadioButton fx:id="rbAsunt1" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Asunto 1" />
-                        <RadioButton fx:id="rbAsunt2" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Asunto 2" />
+                        <RadioButton fx:id="rbAsunt1" mnemonicParsing="false" onAction="#onAsunto1" prefHeight="17.0" prefWidth="105.0" text="Asunto 1" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -59,7 +58,7 @@
             </Label>
             <Pane layoutX="14.0" layoutY="30.0" prefHeight="414.0" prefWidth="375.0" style="-fx-background-color: white; -fx-background-radius: 20;">
                <children>
-                  <Button layoutX="295.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Editar">
+                  <Button fx:id="btEditar" layoutX="295.0" layoutY="14.0" mnemonicParsing="false" onAction="#onEditar" prefHeight="27.0" prefWidth="68.0" text="Editar">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -74,7 +73,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="14.0" layoutY="44.0" prefHeight="321.0" prefWidth="347.0" />
+                  <TextArea fx:id="txArea" layoutX="14.0" layoutY="44.0" prefHeight="321.0" prefWidth="347.0" />
                </children>
             </Pane>
          </children></Pane>

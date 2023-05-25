@@ -29,7 +29,6 @@ public class LoginController implements Initializable {
     private String contraseña = "";
     private String usuario = "";
 
-    //private String a, b;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         abogados.add(new Abogado("2", "Kevin fernando Sepulveda", "Calle 135 diagonal sur 46-34", "123", "kevinf"));
@@ -46,8 +45,6 @@ public class LoginController implements Initializable {
 
     @FXML
     public void onContinuar(ActionEvent event) throws IOException {
-        System.out.println("boton oprimido");
-
         usuario = tfUsuario.getText();
         contraseña = tfContraseña.getText();
 
