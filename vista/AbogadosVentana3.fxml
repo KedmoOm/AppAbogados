@@ -4,8 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -40,12 +38,7 @@
             <DatePicker fx:id="dpInicio" layoutX="11.0" layoutY="208.0" prefHeight="23.0" prefWidth="180.0" promptText="Fecha de Inicio" />
             <DatePicker fx:id="dpFinalizado" layoutX="11.0" layoutY="255.0" prefHeight="23.0" prefWidth="180.0" promptText="Fecha de FInalizado" />
             <Button fx:id="btGuardar" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="302.0" mnemonicParsing="false" onAction="#onGuardar" prefHeight="31.0" prefWidth="120.0" style="-fx-background-radius: 20;" text="Guardar" textAlignment="CENTER" />
-            <MenuButton fx:id="mbAsunto" layoutX="58.0" layoutY="155.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="Asunto">
-              <items>
-                <MenuItem mnemonicParsing="false" text="En proceso" />
-                <MenuItem mnemonicParsing="false" text="Finalizado" />
-              </items>
-            </MenuButton>
+            <ComboBox fx:id="cbAsunto" layoutX="26.0" layoutY="167.0" prefWidth="150.0" promptText="Asunto" />
          </children>
       </Pane>
    </children>

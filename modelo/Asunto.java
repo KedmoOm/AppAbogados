@@ -31,7 +31,4 @@ public class Asunto {
         
         return s;
     }
-
-    public void cambiarEstado() {
-    }
 }
